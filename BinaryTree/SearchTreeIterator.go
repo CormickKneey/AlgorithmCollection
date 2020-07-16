@@ -1,9 +1,9 @@
 package BinaryTree
+
 /*
 实现一个二叉搜索树迭代器。你将使用二叉搜索树的根节点初始化迭代器。
 调用 next() 将返回二叉搜索树中的下一个最小的数。
  */
-
 
 
 // Definition for a binary tree node.
@@ -14,7 +14,7 @@ type TreeNode struct {
 }
 
 // 成员：
-// nums: 保存递增的切片
+// nums: 【递增】的切片
 // root: 根节点
 type BSTIterator struct {
 	nums []int
