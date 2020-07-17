@@ -1,6 +1,5 @@
 package DynamicProgramming
 
-
 /*
 最长递增子序列
 
@@ -11,8 +10,10 @@ explain: [2,3,7,101]
  */
 func LIS(nums []int)int{{
 	res := 0
-	dp := make([]int,0)
-	dp[0] = 1
+	dp := make([]int,len(nums)+1)
+	for i,_ := range dp{
+		dp[i] = 1
+	}
 	//状态转移方程:
 	//if num[i] > num[j] dp[i] = max(dp[i],dp[j]+1)
 
