@@ -16,8 +16,6 @@ func TestCoinChange(t *testing.T){
 	}
 }
 
-
-
 func TestLIS(t *testing.T) {
 	defer func() {
 		r := recover()
@@ -66,5 +64,23 @@ func TestLongestValidParentheses(t *testing.T) {
 	actual2 := LongestValidParentheses(str2)
 	if actual1 != expected1 || actual2 != expected2{
 		t.Errorf("\nActual1 : %v; expected1 %v\n2 : %v; expected2 %v", actual1 , expected1,actual2,expected2)
+	}
+}
+
+func TestMaxProfit(t *testing.T) {
+	var (
+		prices = []int{7,1,5,3,6,4}
+		prices2 = []int{3,3,5,0,0,3,1,4}
+		expected1 = 5
+		expected2 = 7
+		expected3 = 6
+	)
+	actual1 := MaxProfit1(prices)
+	actual2 := MaxProfit2(prices)
+	actual3 := MaxProfit3(prices2)
+	if actual1 != expected1 || actual2 != expected2 || actual3 != expected3{
+		t.Errorf("\nActual1 : %v; expected1 %v" +
+			"\nActual2 : %v; expected2 %v" +
+			"\nActual2 : %v; expected2 %v", actual1 , expected1,actual2,expected2,actual3,expected3)
 	}
 }
