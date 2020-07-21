@@ -53,7 +53,7 @@ func LongestValidParentheses(s string) int {
 				}
 			} else if i - dp[i - 1] > 0 && s[i - dp[i - 1] - 1] == '(' {
 				if i - dp[i - 1] >= 2 {
-					dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2
+					dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2   //前边还有字符串
 				} else {
 					dp[i] = dp[i - 1] + 2
 				}

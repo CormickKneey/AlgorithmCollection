@@ -1,6 +1,8 @@
 package DynamicProgramming
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestCoinChange(t *testing.T){
 	var(
