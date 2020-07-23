@@ -65,3 +65,20 @@ func TestCombine(t *testing.T) {
 		fmt.Print("\n")
 	}
 }
+
+
+func TestQuick_sort(t *testing.T) {
+	var(
+		nums = []int{2,3,5,1,18,7,9,11,87,34,23}
+	)
+	Quick_sort(nums,0,len(nums)-1)
+	for _,v := range nums{
+		fmt.Printf("\t %d",v)
+	}
+}
+
+
+
+func TestCompare(t *testing.T) {
+
+}
