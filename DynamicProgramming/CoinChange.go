@@ -1,6 +1,5 @@
 package DynamicProgramming
 
-
 // 背包问题以及变体
 /*
 Leetcode:518
@@ -14,6 +13,27 @@ Explanation:
 5 = 2+1+1+1
 5 = 1+1+1+1+1
  */
+
+type Spot struct {
+	x int
+	y int
+}
+
+type Spots []Spot
+
+func (s Spots)Len()int{
+	return len(s)
+}
+
+func (s Spots)Less(i,j int)bool{
+	return s[i].y>s[j].y
+}
+
+func (s Spots)Swap(i,j int){
+	s[i],s[j] = s[j],s[i]
+}
+
+
 
 func CoinChange(amount int,coins []int)int {
 	n := len(coins)
@@ -60,6 +80,8 @@ func CanPartition(nums []int)bool{
 	}
 	return dp[sum]
 }
+
+
 
 
 

@@ -16,7 +16,6 @@ func LIS(nums []int)int{{
 	}
 	//状态转移方程:
 	//if num[i] > num[j] dp[i] = max(dp[i],dp[j]+1)
-
 	for i:=0;i<len(nums);i++{
 		for j:=0;j<i;j++{
 			if nums[i] > nums[j]{
@@ -63,3 +62,39 @@ func LongestValidParentheses(s string) int {
 	}
 	return maxAns
 }
+
+
+/*
+1. 最长回文字串
+2. 快排/冒泡
+3. KMP
+ */
+
+func LongestPalindrome(s string)string{
+	f := func(s string,i,j int)(int,int) {
+		for i >= 0 && j<len(s) && s[i] == s[j]{
+			i--
+			j++
+		}
+		return i+1,j-i-1 //开始位置 与 长度
+	}
+	maxlen := 0
+	start := 0
+	for i:=0;i<len(s);i++{
+		s1,len1 := f(s,i,i)
+		s2,len2 := f(s,i,i+1)
+		s,len := s1,len1
+		if len2>len1{
+			s,len = s2,len2
+
+		}
+		if len2 > maxlen{
+			maxlen = len
+			start = s
+		}
+	}
+	return s[start:start+maxlen]
+}
+
+
+

@@ -1,6 +1,7 @@
 package DynamicProgramming
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -83,4 +84,11 @@ func TestMaxProfit(t *testing.T) {
 			"\nActual2 : %v; expected2 %v" +
 			"\nActual2 : %v; expected2 %v", actual1 , expected1,actual2,expected2,actual3,expected3)
 	}
+}
+
+func TestLongestPalindrome(t *testing.T) {
+	var(
+		s = "asdcasddsaadeaaaedas"
+	)
+	fmt.Printf(LongestPalindrome(s))
 }

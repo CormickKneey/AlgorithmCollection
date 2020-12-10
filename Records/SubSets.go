@@ -21,7 +21,6 @@ Leetcode78:给定一组不含重复元素的整数数组 nums，返回该数组�
 func Subset(nums []int) [][]int {
 	result := make([][]int, 0)
 	item := make([]int, 0)
-
 	result = append(result, item)
 	generate(0, nums, &item, &result)	//[0,[1,2,3],[],[[]]]
 	return result
@@ -83,4 +82,23 @@ func backTrack(n,k,start int,track *[]int,res *[][]int){
 		backTrack(n,k,i+1,track,res)
 		*track = (*track)[:len(*track)-1]
 	}
+}
+
+
+func Getone(n int)int{
+	account := 0
+	for n!=1{
+		if n%2 == 0{
+			n /=2
+			account++
+		}else if n==3{
+			account += 2
+			return account
+		}else{
+			n++
+			n/=2
+			account +=2
+		}
+	}
+	return account
 }

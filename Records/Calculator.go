@@ -1,6 +1,7 @@
 package Records
 
 import (
+	"math"
 	"strconv"
 )
 
@@ -74,4 +75,25 @@ func Quick_sort(q []int, l, r int) {
 	Quick_sort(q, l, j) // 递归处理左右两段
 	Quick_sort(q, j+1, r)
 
+}
+
+/*
+求n的平方根x，x精确到m位小数。例如求n精确到小数点后4位的平方根。
+*/
+
+func Sqrt(num float64,pre float64)float64{
+	y := num/2.0
+	low := 0.0
+	up := num
+	for math.Abs(y * y - num) > pre{
+		// fmt.Println(count, y)
+		if y*y > num{
+			up = y
+			y = low+(y-low)/2
+		}else{
+			low = y
+			y = up-(up-y)/2
+		}
+	}
+	return y
 }
